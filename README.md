@@ -3,6 +3,7 @@ REACT STARTE KIT
 ## 1) Structure & Components
 
 -App component
+-API component
 -List movies component
 -Filters components
 -Poster filter component

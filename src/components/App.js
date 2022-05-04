@@ -5,6 +5,7 @@
 // JSON
 
 import '../styles/App.scss';
+import getApiData from '../services/moviesApi'; //I can name this import as I prefer
 
 // Función principal.
 function App() {
