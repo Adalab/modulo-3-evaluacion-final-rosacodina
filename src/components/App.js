@@ -5,8 +5,8 @@
 // JSON
 
 import '../styles/App.scss';
+import { useState, useEffect } from 'react';
 import getApiData from '../services/moviesApi'; //I can name this import as I prefer
-import { useEffect } from 'react';
 
 // Función principal.
 function App() {
