@@ -6,7 +6,8 @@ const getApiData = () => {
   )
     .then((response) => response.json())
     .then((data) => {
-      const dataClean = data.movie.map((movie) => {
+      console.log(data);
+      const dataClean = data.map((movie) => {
         return {
           id: movie.movie,
           year: movie.year,

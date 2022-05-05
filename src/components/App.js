@@ -1,9 +1,3 @@
-// import sirve para enlazar /traer las dependencias que necesitamos.
-// Librerías JS
-// CSS
-// Imágenes
-// JSON
-
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
 import getApiData from '../services/moviesApi'; //I can name this import as I prefer
@@ -20,7 +14,6 @@ function App() {
   }, []);
 
   return (
-    // Como solo se puede devolver una etiqueta, se puede usar una etiqueta ficticia vacia, llamada FRAGMENTO, y que se escribe, abiriendo y cerrando la etiqueta vacia, así "<> html </>".
     <>
       <h1 className="header__title">Owen Wilson's "wow" films</h1>
     </>
