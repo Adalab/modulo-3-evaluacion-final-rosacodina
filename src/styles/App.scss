@@ -1,0 +1,22 @@
+.header_title {
+  text-align: center;
+  color: #d96459;
+  text-decoration: double;
+}
+
+.card {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50% 50%;
+
+  &__image {
+    height: 350px;
+    width: 250px;
+  }
+
+  &__details {
+    height: 350px;
+    width: 250px;
+  }
+}

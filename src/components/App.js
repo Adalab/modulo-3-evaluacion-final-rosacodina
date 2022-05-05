@@ -1,8 +1,9 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
-import getApiData from '../services/moviesApi'; //I can name this import as I prefer
 
-// Función principal.
+import getApiData from '../services/moviesApi'; //I can name this import as I prefer
+import MovieList from './MovieList';
+
 function App() {
   const [dataMovies, setDataMovies] = useState([]);
 
@@ -15,7 +16,9 @@ function App() {
 
   return (
     <>
-      <h1 className="header__title">Owen Wilson's "wow" films</h1>
+      <h1 className="header_title">Owen Wilson's "wow" films</h1>
+
+      <MovieList movies={dataMovies} />
     </>
   );
 }

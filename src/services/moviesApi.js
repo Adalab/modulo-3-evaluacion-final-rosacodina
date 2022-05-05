@@ -9,9 +9,10 @@ const getApiData = () => {
       console.log(data);
       const dataClean = data.map((movie) => {
         return {
-          id: movie.movie,
+          image: movie.poster,
+          title: movie.movie,
           year: movie.year,
-          phrase: movie.fullline,
+          phrase: movie.full_line,
           audio: movie.audio,
         };
       });
