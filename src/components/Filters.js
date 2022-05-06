@@ -1,4 +1,5 @@
 import MovieFilter from './MovieFilter';
+import YearFilter from './YearFilter';
 
 function Filters(props) {
   return (
@@ -8,6 +9,7 @@ function Filters(props) {
           handleMovieFilter={props.handleMovieFilter}
           movieFilter={props.movieFilter}
         />
+        <YearFilter getYear={props.getYear} />
       </form>
     </section>
   );
