@@ -2,7 +2,7 @@ import MovieFilter from './MovieFilter';
 
 function Filters() {
   return (
-    <section>
+    <section className="filters">
       <form>
         <MovieFilter />
       </form>

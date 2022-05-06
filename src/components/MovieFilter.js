@@ -1,12 +1,11 @@
 function MovieFilter() {
   return (
     <>
-      <label>Película</label>
-      <select>
-        <option></option>
-        <option></option>
-        <option></option>
-      </select>
+      <input
+        className="input"
+        placeholder="nombre de la película"
+        type="text"
+      ></input>
     </>
   );
 }
