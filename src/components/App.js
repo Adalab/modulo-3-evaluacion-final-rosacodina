@@ -1,10 +1,13 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
 
 import getApiData from '../services/moviesApi'; //I can name this import as I prefer
 import MovieList from './MovieList';
 import Filters from './Filters';
 import MovieFilter from './MovieFilter';
+import MovieCardDetail from './MovieCardDetail';
 
 function App() {
   /*FETCH*/
@@ -65,18 +68,35 @@ function App() {
     return uniqueYear;
   };
 
+  const { pathCard } = useLocation();
+  const dataPath = matchPath('/card/:movieCard', pathCard);
+
+  const card = dataPath.params.card;
+  const cardFound = dataMovies.find((item) => item.id === card);
   //--------------------------------------------------//
   return (
     <>
       <h1 className="header_title">Owen Wilson's "wow" films</h1>
-
-      <MovieList movies={userFilters} />
-      <Filters
-        handleMovieFilter={handleMovieFilter}
-        movieFilter={movieFilter}
-        getYear={getYear()}
-        handleYearFilter={handleYearFilter}
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Filters
+                handleMovieFilter={handleMovieFilter}
+                movieFilter={movieFilter}
+                getYear={getYear()}
+                handleYearFilter={handleYearFilter}
+              />
+              <MovieList movies={userFilters} />
+            </>
+          }
+        />
+        <Route
+          path="/card/:movieCard"
+          element={<MovieCardDetail user={cardFound} />}
+        />
+      </Routes>
     </>
   );
 }
