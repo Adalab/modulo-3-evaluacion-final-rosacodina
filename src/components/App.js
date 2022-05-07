@@ -45,13 +45,13 @@ function App() {
     }*/
 
       //Ternary, it is the same as the previous conditional
-      return movieFilter === '' ? true : movie.title.includes(movieFilter);
+      return movieFilter === '' ? true : movie.title === movieFilter;
     })
     .filter((movie) => {
       if (yearFilter.length === 0) {
         return true;
       } else {
-        yearFilter.includes(movie.year);
+        return yearFilter.includes(movie.year);
       }
     });
 
