@@ -9,7 +9,10 @@ function Filters(props) {
           handleMovieFilter={props.handleMovieFilter}
           movieFilter={props.movieFilter}
         />
-        <YearFilter getYear={props.getYear} />
+        <YearFilter
+          getYear={props.getYear}
+          handleYearFilter={props.handleYearFilter}
+        />
       </form>
     </section>
   );

@@ -1,12 +1,19 @@
 function YearFilter(props) {
+  const handleChange = (ev) => {
+    props.handleYearFilter(ev.target.value);
+  };
   const renderYears = () => {
-    return props.getYear.map((year) => {
-      return <option></option>;
+    return props.getYear.map((year, index) => {
+      return (
+        <option key={index} value={year}>
+          {year}
+        </option>
+      );
     });
   };
   return (
     <>
-      <select>
+      <select onChange={handleChange} value={'year'}>
         <option value="">Year of the film</option> {renderYears()}
       </select>
     </>
