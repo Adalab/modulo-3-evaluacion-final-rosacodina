@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 function CardMovie(props) {
   return (
-    <a>
+    <Link to={`/movie/${props.movie.id}`}>
       <section className="card">
         <div>
           <img
@@ -13,10 +15,10 @@ function CardMovie(props) {
         <div className="card__details">
           <h2>{`${props.movie.title} ${props.movie.year}`}</h2>
           <p>{props.movie.phrase}</p>
-          <a>{props.movie.audio}</a>
+          <p>{props.movie.audio}</p>
         </div>
       </section>
-    </a>
+    </Link>
   );
 }
 

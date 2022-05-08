@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 
 import getApiData from '../services/moviesApi'; //I can name this import as I prefer
@@ -68,10 +68,10 @@ function App() {
     return uniqueYear;
   };
 
-  const { pathCard } = useLocation();
-  const dataPath = matchPath('/movie/:movieId', pathCard);
+  const { pathname } = useLocation();
+  const dataPath = matchPath('/movie/:movieId', pathname);
 
-  const movieId = dataPath.params.movieId;
+  const movieId = dataPath !== null ? dataPath.params.movieId : null;
   const movieFound = dataMovies.find((movie) => movie.id === movieId);
   //--------------------------------------------------//
   return (
