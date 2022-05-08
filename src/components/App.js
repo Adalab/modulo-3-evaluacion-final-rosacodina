@@ -69,10 +69,10 @@ function App() {
   };
 
   const { pathCard } = useLocation();
-  const dataPath = matchPath('/card/:movieCard', pathCard);
+  const dataPath = matchPath('/movie/:movieId', pathCard);
 
-  const card = dataPath.params.card;
-  const cardFound = dataMovies.find((item) => item.id === card);
+  const movieId = dataPath.params.movieId;
+  const movieFound = dataMovies.find((movie) => movie.id === movieId);
   //--------------------------------------------------//
   return (
     <>
@@ -93,8 +93,8 @@ function App() {
           }
         />
         <Route
-          path="/card/:movieCard"
-          element={<MovieCardDetail user={cardFound} />}
+          path="/movie/:movieId"
+          element={<MovieCardDetail movieFound={movieFound} />}
         />
       </Routes>
     </>
