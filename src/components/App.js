@@ -48,7 +48,9 @@ function App() {
     }*/
 
       //Ternary, it is the same as the previous conditional
-      return movieFilter === '' ? true : movie.title === movieFilter;
+      return movieFilter === ''
+        ? true
+        : movie.title.toLowerCase().includes(movieFilter.toLowerCase());
     })
     .filter((movie) => {
       if (yearFilter.length === 0) {
